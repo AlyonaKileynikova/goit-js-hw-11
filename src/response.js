@@ -3,7 +3,7 @@ let RESPONSE_COUNTER = 1;
 
 // функція перевірки відгуку на кількість запитів перед створенням розмітки
 export default function onGetSuccess(response) {
-    if (response.data.hits.length === 0 || response.status === 404) {
+    if (response.data.hits.length === 0) {
         return Notify.failure(
             'Sorry, there are no images matching your search query. Please try again.'
         );

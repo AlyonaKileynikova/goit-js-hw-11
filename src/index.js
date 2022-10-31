@@ -1,3 +1,4 @@
+
 import getUser, { resetPage } from './searchingFunction';
 import SimpleLightbox from 'simplelightbox';
 import 'simplelightbox/dist/simple-lightbox.min.css';
@@ -33,7 +34,7 @@ searchForm.addEventListener('submit', async evt => {
         resetResponseCounter();
         await doMagic();
         lightboxRefresh();
-        smoothScroll();
+        // smoothScroll();
         infiniteScroll();
     }
 });
@@ -48,7 +49,6 @@ function clearGallery() {
 function lightboxRefresh() {
     lightbox.refresh();
 };
-
 
 // Функція doMagic - отриманная інфо про виборку, опрацювання відповідей та створення розмітки
 async function doMagic() {
@@ -90,65 +90,64 @@ function infiniteLogic() {
 }
 
 // Фунція плавного скролу
-function smoothScroll() {
-    const y = gallery.firstElementChild.getBoundingClientRect().y;
-    window.scrollBy({
-        top: `${y}`,
-        behavior: 'smooth',
-    }
-    );
-}
-
-
-// const refs = {
-//   searchForm: document.querySelector('form#search-form'),
-//   input: document.querySelector('input[name="searchQuery"]'),
-//   gallery: document.querySelector('.gallery'),
-//   loadMoreBtn: document.querySelector('.load-more'),
-// };
-// export {refs} 
-// refs.loadMoreBtn.hidden = true;
-
-// refs.searchForm.addEventListener('submit', onSearch);
-
-// async function onSearch(event) {
-//   event.preventDefault();
-//   emptyMarkup();
-
-//   const searchName = refs.input.value.trim();
-
-//   try {
-//     const response = await getPictures(searchName);
-
-//     if (response.data.totalHits > 0) {
-//       // console.log('response:  ', response);
-//       //console.log('response.data.totalHits (after SUBMIT): ' , response.data.totalHits);
-
-//       Notiflix.Notify.success(
-//         `Hooray! We found ${response.data.totalHits} images.`
-//       );
-
-//       refs.gallery.insertAdjacentHTML('beforeend', renderMarkup(response));
-
-//       const lightbox = new SimpleLightbox('.gallery a', {
-//         showCounter: false,
-//       });
-
-//       refs.loadMoreBtn.hidden = false;
-
-//       localStorage.setItem('searchName', searchName);
-
-//       // console.log('searchName from localStorage : ', localStorage.getItem('searchName'));
-
-//       refs.input.value = '';
-
-//       refs.loadMoreBtn.addEventListener('click', onLoad);
-//       lightbox.refresh();
-//     } else {
-//       emptyMarkup();
-//       throw new Error();
+// function smoothScroll() {
+//     const y = gallery.firstElementChild.getBoundingClientRect().y;
+//     window.scrollBy({
+//         top: `${y}`,
+//         behavior: 'smooth',
 //     }
-//   } catch (error) {
-//     //console.log(error)
-//   }
+//     );
 // }
+
+// // const refs = {
+// //   searchForm: document.querySelector('form#search-form'),
+// //   input: document.querySelector('input[name="searchQuery"]'),
+// //   gallery: document.querySelector('.gallery'),
+// //   loadMoreBtn: document.querySelector('.load-more'),
+// // };
+// // export {refs}
+// // refs.loadMoreBtn.hidden = true;
+
+// // refs.searchForm.addEventListener('submit', onSearch);
+
+// // async function onSearch(event) {
+// //   event.preventDefault();
+// //   emptyMarkup();
+
+// //   const searchName = refs.input.value.trim();
+
+// //   try {
+// //     const response = await getPictures(searchName);
+
+// //     if (response.data.totalHits > 0) {
+// //       // console.log('response:  ', response);
+// //       //console.log('response.data.totalHits (after SUBMIT): ' , response.data.totalHits);
+
+// //       Notiflix.Notify.success(
+// //         `Hooray! We found ${response.data.totalHits} images.`
+// //       );
+
+// //       refs.gallery.insertAdjacentHTML('beforeend', renderMarkup(response));
+
+// //       const lightbox = new SimpleLightbox('.gallery a', {
+// //         showCounter: false,
+// //       });
+
+// //       refs.loadMoreBtn.hidden = false;
+
+// //       localStorage.setItem('searchName', searchName);
+
+// //       // console.log('searchName from localStorage : ', localStorage.getItem('searchName'));
+
+// //       refs.input.value = '';
+
+// //       refs.loadMoreBtn.addEventListener('click', onLoad);
+// //       lightbox.refresh();
+// //     } else {
+// //       emptyMarkup();
+// //       throw new Error();
+// //     }
+// //   } catch (error) {
+// //     //console.log(error)
+// //   }
+// // }

@@ -1,23 +1,25 @@
 import axios from "axios";
 
+
+
 let PAGE_COUNTER = 1;
 
 // Робота з арі
 export default async function getUser(searching) {
     try {
-        const BASE_URL = `https://pixabay.com/api/`;
-        const searchingParameters = new URLSearchingParameters({
-            key: '30943279-78d227be7adcee3f7dee47f41',
-            q: `${searching}`,
-            image_type: 'photo',
-            orientation: 'horizontal',
-            safesearch: 'true',
-            page: `${PAGE_COUNTER}`,
-            per_page: 40,
+        const BASE_URL = 'https://pixabay.com/api';
+        const searchParams = new URLSearchParams({
+          key: '30991225-d0f50160f689eb7082679a7a8',
+          q: searching,
+          image_type: 'photo',
+          orientation: 'horizontal',
+          safesearch: true,
+          page: PAGE_COUNTER,
+          per_page: 40,
         });
 
         const response = await axios.get(
-          `${BASE_URL}/?${URLSearchingParameters}`
+          `${BASE_URL}?${searchParams}`
         );
 
         PAGE_COUNTER += 1;
