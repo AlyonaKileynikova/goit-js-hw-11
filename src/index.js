@@ -34,7 +34,7 @@ searchForm.addEventListener('submit', async evt => {
         resetResponseCounter();
         await doMagic();
         lightboxRefresh();
-        // smoothScroll();
+        smoothScroll();
         infiniteScroll();
     }
 });
@@ -90,14 +90,14 @@ function infiniteLogic() {
 }
 
 // Фунція плавного скролу
-// function smoothScroll() {
-//     const y = gallery.firstElementChild.getBoundingClientRect().y;
-//     window.scrollBy({
-//         top: `${y}`,
-//         behavior: 'smooth',
-//     }
-//     );
-// }
+function smoothScroll() {
+    const y = gallery.firstElementChild.getBoundingClientRect().y;
+    window.scrollBy({
+        top: y,
+        behavior: 'smooth',
+    }
+    );
+}
 
 // // const refs = {
 // //   searchForm: document.querySelector('form#search-form'),

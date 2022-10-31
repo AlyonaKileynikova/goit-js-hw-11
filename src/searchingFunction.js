@@ -7,7 +7,7 @@ let PAGE_COUNTER = 1;
 // Робота з арі
 export default async function getUser(searching) {
     try {
-        const BASE_URL = 'https://pixabay.com/api';
+        const BASE_URL = 'https://pixabay.com/api/';
         const searchParams = new URLSearchParams({
           key: '30991225-d0f50160f689eb7082679a7a8',
           q: searching,
